@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Github, Linkedin, Twitter, Mail, ExternalLink, FileDown, MapPin, Calendar, ArrowRight, Send } from "lucide-react";
 import API from "../api/axiosConfig";
+import premLogo from "../assets/prem-logo.png";
+import premPro from "../assets/prem-pro.jpg";
 
 const Home = () => {
   const [featuredProjects, setFeaturedProjects] = useState([]);
@@ -96,7 +98,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="flex items-start gap-6 animate-fadeInUp">
         <img 
-          src="/src/assets/prem-logo.png" 
+          src={premLogo}
           alt="Prem Raj Anand" 
           className="w-16 h-16 rounded-full object-cover border-2 border-gray-300 dark:border-gray-700 transition-all hover-scale"
         />
@@ -286,7 +288,7 @@ const Home = () => {
             {/* Profile Image */}
             <div className="shrink-0">
               <img 
-                src="/src/assets/prem-pro.jpg" 
+                src={premPro}
                 alt="Prem Raj Anand" 
                 className="w-32 h-32 rounded-lg object-cover border-2 border-gray-300 dark:border-gray-700 transition-colors"
               />

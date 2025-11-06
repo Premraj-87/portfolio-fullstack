@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Sun, Moon, LogOut, Menu, X } from "lucide-react";
+import premLogo from "../assets/prem-logo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/src/assets/prem-logo.png"
+              src={premLogo}
               alt="Prem"
               className="w-8 h-8 rounded-full object-cover"
             />
