@@ -30,8 +30,8 @@ const CloudinaryUploadWidget = ({ onUploadSuccess, buttonText = "Upload Image" }
     // Create upload widget
     widgetRef.current = cloudinaryRef.current.createUploadWidget(
       {
-        cloudName: "djpnc474q", // Your Cloudinary cloud name
-        uploadPreset: "portfolio_uploads", // Your upload preset
+        cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "djpnc474q",
+        uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "portfolio_uploads",
         sources: ["local", "url", "camera"],
         multiple: false,
         cropping: true,
