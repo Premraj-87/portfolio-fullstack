@@ -1,0 +1,561 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Root Color Variables */
+:root {
+  /* Light Mode Colors */
+  --color-bg-primary: 255 255 255;
+  --color-bg-secondary: 249 250 251;
+  --color-bg-tertiary: 243 244 246;
+  --color-text-primary: 17 24 39;
+  --color-text-secondary: 75 85 99;
+  --color-text-tertiary: 107 114 128;
+  --color-border-primary: 229 231 235;
+  --color-border-secondary: 209 213 219;
+  --color-accent: 218 165 32;
+  --color-accent-hover: 184 134 11;
+  --color-card-bg: 255 255 255;
+  --color-card-border: 229 231 235;
+  --color-input-bg: 255 255 255;
+  --color-input-border: 209 213 219;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --color-bg-primary: 0 0 0;
+  --color-bg-secondary: 17 24 39;
+  --color-bg-tertiary: 31 41 55;
+  --color-text-primary: 243 244 246;
+  --color-text-secondary: 209 213 219;
+  --color-text-tertiary: 156 163 175;
+  --color-border-primary: 55 65 81;
+  --color-border-secondary: 75 85 99;
+  --color-accent: 238 180 34;
+  --color-accent-hover: 218 165 32;
+  --color-card-bg: 17 24 39;
+  --color-card-border: 55 65 81;
+  --color-input-bg: 31 41 55;
+  --color-input-border: 55 65 81;
+}
+
+/* Global Styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth Animations & Transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Stagger animations for lists */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .hover-lift:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(218, 165, 32, 0.4);
+}
+
+.dark .hover-glow:hover {
+  box-shadow: 0 0 20px rgba(238, 180, 34, 0.4);
+}
+
+/* Micro Interactions */
+.micro-bounce {
+  transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.micro-bounce:hover {
+  transform: scale(1.1);
+}
+
+.micro-bounce:active {
+  transform: scale(0.95);
+}
+
+.micro-rotate {
+  transition: transform 0.3s ease;
+}
+
+.micro-rotate:hover {
+  transform: rotate(5deg);
+}
+
+.micro-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.micro-wiggle:hover {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.micro-pulse:hover {
+  animation: micro-pulse 0.8s ease-in-out;
+}
+
+@keyframes micro-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.micro-glow {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.micro-glow:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(218, 165, 32, 0.6));
+  transform: scale(1.02);
+}
+
+.dark .micro-glow:hover {
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(238, 180, 34, 0.6));
+}
+
+.micro-tilt {
+  transition: transform 0.3s ease;
+}
+
+.micro-tilt:hover {
+  transform: perspective(500px) rotateY(5deg);
+}
+
+.micro-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.micro-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.micro-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(218, 165, 32, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.micro-ripple:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.dark .micro-ripple::before {
+  background: rgba(238, 180, 34, 0.2);
+}
+
+.btn-press {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-press:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-fast {
+  transition: all 0.15s ease;
+}
+
+.transition-slow {
+  transition: all 0.5s ease;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(229, 231, 235, 0.2) 0%,
+    rgba(229, 231, 235, 0.5) 50%,
+    rgba(229, 231, 235, 0.2) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.dark .skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(55, 65, 81, 0.2) 0%,
+    rgba(55, 65, 81, 0.5) 50%,
+    rgba(55, 65, 81, 0.2) 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Page Transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-border-secondary));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-text-tertiary));
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(218, 165, 32, 0.3);
+  color: rgb(var(--color-text-primary));
+}
+
+.dark ::selection {
+  background-color: rgba(238, 180, 34, 0.3);
+}
+
+/* Focus Visible */
+*:focus-visible {
+  outline: 2px solid rgb(218, 165, 32);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.dark *:focus-visible {
+  outline-color: rgb(238, 180, 34);
+}
+
+/* Image Loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Backdrop Blur */
+.backdrop-blur-custom {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ReactQuill Dark Mode Fixes */
+.dark .ql-toolbar {
+  background-color: rgb(55 65 81) !important;
+  border-color: rgb(75 85 99) !important;
+}
+
+.dark .ql-container {
+  background-color: rgb(55 65 81) !important;
+  border-color: rgb(75 85 99) !important;
+  color: white !important;
+}
+
+.dark .ql-editor {
+  color: white !important;
+}
+
+.dark .ql-editor.ql-blank::before {
+  color: rgb(156 163 175) !important;
+}
+
+.dark .ql-stroke {
+  stroke: white !important;
+}
+
+.dark .ql-fill {
+  fill: white !important;
+}
+
+.dark .ql-picker-label {
+  color: white !important;
+}
+
+.dark .ql-picker-options {
+  background-color: rgb(55 65 81) !important;
+}
+
+.ql-container {
+  min-height: 200px !important;
+  font-size: 16px;
+}
+
+.ql-editor {
+  min-height: 200px !important;
+}
+
+/* Light Mode ReactQuill */
+.ql-toolbar {
+  background-color: rgb(249 250 251) !important;
+  border-color: rgb(229 231 235) !important;
+}
+
+.ql-container {
+  background-color: white !important;
+  border-color: rgb(229 231 235) !important;
+  color: rgb(17 24 39) !important;
+}
+
+.ql-editor {
+  color: rgb(17 24 39) !important;
+}
+
+.ql-editor.ql-blank::before {
+  color: rgb(156 163 175) !important;
+}
+
+.ql-stroke {
+  stroke: rgb(75 85 99) !important;
+}
+
+.ql-fill {
+  fill: rgb(75 85 99) !important;
+}
+
+.ql-picker-label {
+  color: rgb(75 85 99) !important;
+}
+
+.ql-picker-options {
+  background-color: white !important;
+}
