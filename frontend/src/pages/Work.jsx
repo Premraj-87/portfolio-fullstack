@@ -3,36 +3,34 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 const Work = () => {
   const experiences = [
     {
-      company: "SerengStar",
-      logo: "SG",
-      position: "Frontend Developer",
-      duration: " - Present",
-      location: "On-Site",
-      type: "Full-time",
-      description: "Leading development of scalable web applications using MERN stack. Implemented microservices architecture, reducing API response time by 40%. Mentoring junior developers and conducting code reviews.",
+      company: "BitFusion Technologies",
+      logo: "BT",
+      position: "UX/UI Designer",
+      duration: "Dec 2024 - Aug 2025",
+      location: "Remote",
+      type: "Freelance",
+      description: "Creates intuitive and aesthetically pleasing user interfaces for digital products. Focuses on visual design, interactivity, and brand consistency to enhance user experience and engagement.",
       responsibilities: [
-        "Architected and developed microservices-based applications",
-        "Led a team of 5 developers in agile environment",
-        "Improved application performance through optimization techniques",
-        "Implemented CI/CD pipelines using GitHub Actions"
+        "Designed intuitive UI for [App Type] startup application, addressing key user experience challenges.",
+        "Enhanced app usability and engagement through iterative UI design and feedback implementation",
+        "Created visually appealing and consistent UI that aligned with brand identity and attracted users"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Docker", "AWS", "TypeScript"]
+      technologies: ["Figma", "Framer",]
     },
     {
-      company: "Digital Solutions Inc",
-      logo: "DS",
-      position: "Full Stack Developer",
-      duration: "Jun 2022 - Dec 2023",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      description: "Built and maintained 15+ client projects using React, Node.js, and MongoDB. Developed RESTful APIs and integrated third-party services. Improved application performance through optimization techniques.",
+      company: "Camringo Pictures",
+      logo: "CP",
+      position: "Frontend Developer",
+      duration: "July 2024 - Nov 2024",
+      location: "Remote",
+      type: "freelance",
+      description: "As a freelance web developer for Camringo Pictures, I designed and built their dynamic, responsive React website, incorporating engaging animations.",
       responsibilities: [
-        "Developed and maintained full-stack web applications",
-        "Created RESTful APIs and integrated payment gateways",
-        "Collaborated with clients to gather requirements",
-        "Performed code reviews and ensured code quality"
+        "Built out a slick, responsive React front-end for a videography company – made sure it looked great on any device",
+        "Spiced things up with cool animations and interactive bits, making the website feel lively and professional.",
+        "Lent my freelance web development skills to help a videography company get a stunning, modern online portfolio up and running."
       ],
-      technologies: ["React", "Express.js", "PostgreSQL", "Redis", "Stripe API"]
+      technologies: ["React","firebase","framer-motion"]
     },
     
    
@@ -130,8 +128,7 @@ const Work = () => {
           <div>
             <h3 className="text-amber-600 dark:text-amber-400 font-semibold mb-3 transition-colors">Frontend</h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm transition-colors">
-              <li>• React.js & Next.js</li>
-              <li>• TypeScript</li>
+              <li>• React.js</li>
               <li>• Tailwind CSS</li>
               <li>• Redux & Context API</li>
             </ul>
@@ -140,7 +137,7 @@ const Work = () => {
             <h3 className="text-amber-600 dark:text-amber-400 font-semibold mb-3 transition-colors">Backend</h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm transition-colors">
               <li>• Node.js & Express</li>
-              <li>• MongoDB & PostgreSQL</li>
+              <li>• MongoDB </li>
               <li>• RESTful APIs</li>
               <li>• Authentication & JWT</li>
             </ul>
@@ -149,9 +146,7 @@ const Work = () => {
             <h3 className="text-amber-600 dark:text-amber-400 font-semibold mb-3 transition-colors">Tools & Others</h3>
             <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm transition-colors">
               <li>• Git & GitHub</li>
-              <li>• Docker & AWS</li>
-              <li>• CI/CD Pipelines</li>
-              <li>• Agile/Scrum</li>
+              
             </ul>
           </div>
         </div>

@@ -67,29 +67,29 @@ const Home = () => {
 
   const experiences = [
     {
-      company: "Tech Innovations Ltd",
-      logo: "TI",
-      position: "Senior Full Stack Developer",
-      duration: "Jan 2024 - Present",
+      company: "BitFusion Technologies",
+      logo: "BF",
+      position: "UI/UX Designer",
+      duration: " Dec 2024 - Aug 2025",
       location: "Remote",
-      description: "Leading development of scalable web applications using MERN stack. Implemented microservices architecture, reducing API response time by 40%. Mentoring junior developers and conducting code reviews."
+      description: [
+        "Designed intuitive UI for [App Type] startup application, addressing key user experience challenges.",
+        "Enhanced app usability and engagement through iterative UI design and feedback implementation.",
+        "Created visually appealing and consistent UI that aligned with brand identity and attracted users."
+      ]
     },
     {
-      company: "Digital Solutions Inc",
-      logo: "DS",
-      position: "Full Stack Developer",
-      duration: "Jun 2022 - Dec 2023",
-      location: "San Francisco, CA",
-      description: "Built and maintained 15+ client projects using React, Node.js, and MongoDB. Developed RESTful APIs and integrated third-party services. Improved application performance through optimization techniques."
-    },
-    {
-      company: "StartUp Lab",
-      logo: "SL",
+      company: "Camringo Pictures",
+      logo: "CP",
       position: "Frontend Developer",
-      duration: "Jan 2021 - May 2022",
-      location: "New York, NY",
-      description: "Created responsive and interactive user interfaces with React and TypeScript. Collaborated with UX designers to implement pixel-perfect designs. Reduced bundle size by 30% through code splitting."
-    }
+      duration: "July 2024 - Nov 2024",
+      location: "Remote",
+      description: [
+        "Built out a slick, responsive React front-end for a videography company – made sure it looked great on any device!",
+        "Spiced things up with cool animations and interactive bits, making the website feel lively and professional.",
+        "Lent my freelance web development skills to help a videography company get a stunning, modern online portfolio up and running."
+      ]
+    },
   ];
 
   return (
@@ -185,7 +185,15 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed transition-colors">{exp.description}</p>
+                {Array.isArray(exp.description) ? (
+                  <ul className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed transition-colors list-disc ml-5 space-y-1">
+                    {exp.description.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed transition-colors">{exp.description}</p>
+                )}
               </div>
             </div>
           ))}
