@@ -3,11 +3,11 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 const Work = () => {
   const experiences = [
     {
-      company: "Tech Innovations Ltd",
-      logo: "TI",
-      position: "Senior Full Stack Developer",
-      duration: "Jan 2024 - Present",
-      location: "Remote",
+      company: "SerengStar",
+      logo: "SG",
+      position: "Frontend Developer",
+      duration: " - Present",
+      location: "On-Site",
       type: "Full-time",
       description: "Leading development of scalable web applications using MERN stack. Implemented microservices architecture, reducing API response time by 40%. Mentoring junior developers and conducting code reviews.",
       responsibilities: [
@@ -34,38 +34,8 @@ const Work = () => {
       ],
       technologies: ["React", "Express.js", "PostgreSQL", "Redis", "Stripe API"]
     },
-    {
-      company: "StartUp Lab",
-      logo: "SL",
-      position: "Frontend Developer",
-      duration: "Jan 2021 - May 2022",
-      location: "New York, NY",
-      type: "Full-time",
-      description: "Created responsive and interactive user interfaces with React and TypeScript. Collaborated with UX designers to implement pixel-perfect designs. Reduced bundle size by 30% through code splitting.",
-      responsibilities: [
-        "Built responsive web applications using React",
-        "Implemented state management with Redux",
-        "Collaborated with designers on UI/UX improvements",
-        "Optimized application performance and bundle size"
-      ],
-      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Figma"]
-    },
-    {
-      company: "Freelance",
-      logo: "FL",
-      position: "Web Developer",
-      duration: "Jun 2020 - Dec 2020",
-      location: "Remote",
-      type: "Contract",
-      description: "Worked on various freelance projects for small businesses and startups. Built custom websites and web applications tailored to client needs.",
-      responsibilities: [
-        "Developed custom websites for clients",
-        "Provided technical consultation and support",
-        "Managed project timelines and deliverables",
-        "Maintained client relationships"
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"]
-    }
+    
+   
   ];
 
   return (
